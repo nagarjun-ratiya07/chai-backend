@@ -9,6 +9,17 @@ dotenv.config({
 
 
 connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`Server is running port : ${process.env.PORT}`);
+        
+    })
+})
+.catch((err)=>{
+    console.log("MONGODB connection Failed !! : " , err);
+    
+})
+// jyre async code run thay tyre te aek promise return kare che <- v.v.v.MIMP
 
 
 //Approach 1 :- To connect Data Base with our front end through index.js
